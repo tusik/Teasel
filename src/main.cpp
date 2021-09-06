@@ -10,9 +10,9 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     HttpLinkChecker checker;
-    checker.checkLink(QUrl("http://localhost:8888/f/c298883dfeaf4401905c/?dl=1"));
+    checker.checkLink(QUrl("http://127.0.0.1:8887/qt-opensource-windows-x86-5.12.4.exe"));
     DownloadManager dm;
-    dm.fileSize = checker.fileSize;
+    dm.fileSize = checker.file_info.file_size;
 	//QtConcurrent::run(&dm,&DownloadManager::start,checker.url);
 	dm.url = checker.url;
 	QThread* t = new QThread();
